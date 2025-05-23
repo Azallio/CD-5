@@ -2,8 +2,7 @@ const titleOfBank = document.querySelector("#titleOfBank")
 const typeOfPay = document.querySelector("#typeOfPay")
 const cardNumber = document.querySelector("#cardNumber")
 const ownerName = document.querySelector("#ownerName")
-const endDataOfCard_1 = document.querySelector("#endDataOfCard_1")
-const endDataOfCard_2 = document.querySelector("#endDataOfCard_2")
+const endDataOfCard = document.querySelector("#endDataOfCard")
 const Card = document.querySelector("#Card")
 
 
@@ -14,7 +13,7 @@ const updateCardPreview = () => {
     spans[1].innerHTML = cardNumber.value
     let spansInDiv = spans[2].children
     spansInDiv[0].innerHTML = ownerName.value
-    spansInDiv[1].innerHTML = `${endDataOfCard_1.value}/${endDataOfCard_2.value}`
+    spansInDiv[1].innerHTML = endDataOfCard.value
     spansInDiv[2].innerHTML = typeOfPay.value
 }
 
@@ -33,14 +32,13 @@ const savedCardInfoInTable = () => {
         createCell(typeOfPay.value),
         createCell(cardNumber.value),
         createCell(ownerName.value),
-        createCell(`${endDataOfCard_1.value}/${endDataOfCard_2.value}`)
+        createCell(endDataOfCard.value)
     )
     table.append(tr)
 }
 
 titleOfBank.addEventListener('input', updateCardPreview)
-typeOfPay.addEventListener('input', updateCardPreview)
+typeOfPay.addEventListener('change', updateCardPreview)
 cardNumber.addEventListener('input', updateCardPreview)
 ownerName.addEventListener('input', updateCardPreview)
-endDataOfCard_1.addEventListener('input', updateCardPreview)
-endDataOfCard_2.addEventListener('input', updateCardPreview)
+endDataOfCard.addEventListener('change', updateCardPreview)

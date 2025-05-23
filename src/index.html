@@ -8,45 +8,53 @@
     <title>Document</title>
 </head>
 
-<body class="h-full flex flex-wrap gap-[56px] justify-center bg-[#232323]">
+<body class="h-full flex flex-wrap gap-[56px] justify-center bg-[#bdbdbd]">
     <section class="flex items-center">
         <form id="formOfDataForCard"
-            class="w-[300px] h-[400px] bg-[#414141] rounded-[50px]  content-center justify-center flex flex-col gap-[10px]">
+            class="w-[300px] h-[400px] bg-[#e0e0e0] rounded-[50px]  content-center justify-center flex flex-col gap-[10px]">
             <div class="flex flex-col gap-[2px] items-center">
                 <label class="w-max" for="titleOfBank">Название банка</label>
-                <input class="w-max bg-[#838383] py-[5px] px-[15px] rounded-[15px]" id="titleOfBank" type="text">
+                <select class="w-53.75 text-center bg-white py-[5px] px-[15px] rounded-[5px]" id="titleOfBank">
+                    <option value="Сбербанк">Сбербанк</option>
+                    <option value="Тинькофф">Тинькофф</option>
+                    <option value="ВТБ">ВТБ</option>
+                    <option value="Альфа-Банк">Альфа-Банк</option>
+                    <option value="Газпромбанк">Газпромбанк</option>
+                    <option value="Райффайзенбанк">Райффайзенбанк</option>
+                </select>
             </div>
             <div class="flex flex-col gap-[2px] items-center">
                 <label for="typeOfPay">Тип платежной системы</label>
-                <input id="typeOfPay" class="bg-[#838383] py-[5px] px-[15px] rounded-[15px]" type="text">
+                <select id="typeOfPay" class="w-53.75 text-center bg-white py-[5px] px-[15px] rounded-[5px]">
+                    <option value="VISA">VISA</option>
+                    <option value="МИР">МИР</option>
+                    <option value="Mastercard">Mastercard</option>
+                    <option value="WebMoney">WebMoney</option>
+                </select>
             </div>
             <div class="flex flex-col gap-[2px] items-center">
                 <label class="w-max" for="cardNumber">Номер карты</label>
-                <input class="w-max bg-[#838383] py-[5px] px-[15px] rounded-[15px]" id="cardNumber" type="text"
+                <input class="w-53.75 bg-white text-center py-[5px] px-[15px] rounded-[5px] noneDesineInput" id="cardNumber" pattern="/^[0-9]+$/" type="text"
                     maxlength="16">
             </div>
             <div class="flex flex-col gap-[2px] items-center">
                 <label class="w-max" for="ownerName">Имя держателя карты</label>
-                <input class="w-max bg-[#838383] py-[5px] px-[15px] rounded-[15px]" id="ownerName" type="text">
+                <input class="w-53.75 bg-white text-center py-[5px] px-[15px] rounded-[5px]" id="ownerName" type="text">
             </div>
             <div class="flex flex-col gap-[2px] items-center">
                 <label class="w-max" for="endDataOfCard_1 endDataOfCard_2">Месяц и год окончания карты</label>
-                <div id="endDataOfCard" class="bg-[#838383] rounded-[15px] p-[5px]">
-                    <input id="endDataOfCard_1" class="w-[30px] pl-[6px]" type="text" maxlength="2">
-                    /
-                    <input id="endDataOfCard_2" class="w-[30px] pl-[6px]" type="text" maxlength="2">
-                </div>
+                <input id="endDataOfCard" class="w-53.75 pl-[6px] bg-white text-center py-[5px] px-[15px] rounded-[5px]" type="date">
             </div>
             <button type="button" onclick="savedCardInfoInTable()" class="h-[36px] shrink-0">Отправить</button>
         </form>
     </section>
     <section class="flex items-center">
         <article id="Card"
-            class="w-[400px] h-[200px] flex flex-col flex-wrap justify-between bg-[#838383] rounded-[16px]">
-            <span class="w-full h-[34px] pl-[30px] text-[24px] py-[10px]"></span>
-            <span class="w-full h-[34px] text-center text-[24px]"></span>
-            <div class="flex shrink-0 justify-around py-[10px] text-[24px]">
-                <span class=""></span>
+            class="w-[400px] h-[200px] flex flex-col flex-wrap justify-between rounded-[16px] shadow-lg shadow-blue-500/50 bg-linear-to-t from-sky-500 to-indigo-500">
+            <span class="w-full h-[34px] pl-[20px] text-[24px] text-white py-[10px]"></span>
+            <span class="w-full h-[34px] text-center text-[24px] text-white"></span>
+            <div class="flex shrink-0 justify-around py-[10px] text-[24px] text-white">
+                <span></span>
                 <span></span>
                 <span></span>
             </div>
